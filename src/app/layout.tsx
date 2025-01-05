@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import ThemeProvider from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
 import Container from "@/components/Container";
+import CommentSec from "./blog/[slug]/commentSec/page";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -33,8 +34,10 @@ export default function RootLayout({
           <Navbar />
           {children}
           </Container>
+          {/* <CommentSec/> */}
           <Footer />
         </ThemeProvider>
+        
       </body>
     </html>
   );
