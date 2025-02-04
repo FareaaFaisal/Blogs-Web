@@ -5,7 +5,9 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import CommentSec from "./commentSec/page";
 
-<<<<<<< HEAD
+// Revalidate interval in seconds
+export const revalidate = 10;
+
 // Define the Props interface
 interface PageProps {
   params: {
@@ -13,9 +15,6 @@ interface PageProps {
   };
 }
 
-export const revalidate = 10;  // seconds
-
-// This is an async function that will properly handle async params
 const Page = async ({ params }: PageProps) => {
   // Ensure params are awaited properly (use destructuring here)
   const slug = params?.slug;
@@ -24,40 +23,21 @@ const Page = async ({ params }: PageProps) => {
     return <div>Error: slug not found</div>;
   }
 
-=======
-// Revalidate interval in seconds
-export const revalidate = 10;
-
-interface Params {
-  slug: string;
-}
-
-// Ensure to pass the correct type for the page function
-const Page = async ({ params }: { params: Params }) => {
   // Query to fetch post data
->>>>>>> f72c8c53c2dc3567a31d081629e91029c2131f90
   const query = `*[_type=='post' && slug.current==$slug]{
     title, summary, image, content,
     author->{bio, image, name}
   }[0]`;
 
-<<<<<<< HEAD
   // Fetch post data using the resolved slug
   const post = await client.fetch(query, { slug });
-=======
-  // Fetch the post data
-  const post = await client.fetch(query, { slug: params.slug });
->>>>>>> f72c8c53c2dc3567a31d081629e91029c2131f90
 
   // If post is not found, handle it accordingly
   if (!post) {
     return <div>Post not found</div>;
   }
 
-<<<<<<< HEAD
-=======
   // Return JSX with post data
->>>>>>> f72c8c53c2dc3567a31d081629e91029c2131f90
   return (
     <>
       <article className="mt-12 mb-24 px-2 2xl:px-12 flex flex-col gap-y-8">
