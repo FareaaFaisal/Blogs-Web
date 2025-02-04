@@ -1,4 +1,19 @@
+// import Image from "next/image"
+  
+    
+//     export default function About(){
+//         return(
+//           <div className="flex">
+//             <div>
+//                 <Image src="pfp.png" height={100} width={100} alt="pfp"/>
+//             </div>
 
+//             <div><p>ABOUT ME</p></div>
+//           </div>
+           
+    
+//         )
+//     }
 import Image from "next/image"
 import Link from "next/link"
 
@@ -99,7 +114,7 @@ export default function About(){
       </button>
     </form> */}
     <div className="h-0">
-       <Image src="pfp.png" alt="alt" width={350} height={400} className="h-[400px] w-[350px] ml-2"/>
+       <img src="pfp.png" alt="alt"  className="h-[400px] w-[350px] ml-2"/>
     </div>
   </div>
 </div>
