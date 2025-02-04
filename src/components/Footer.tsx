@@ -13,7 +13,7 @@ export default function Footer() {
     <ul className="flex flex-wrap justify-center gap-x-8 gap-4 mt-8 mb-12">
       <li>
         <Link href="https://github.com/FareaaFaisal">
-        <Image src={"/github.png"} alt={"Github Icon"} width={30} height={30}/>
+        <Image src={"/github-sign.png"} alt={"Github Icon"} width={30} height={30}/>
         </Link>
       </li>
 

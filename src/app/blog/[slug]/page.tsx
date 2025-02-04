@@ -1,24 +1,18 @@
-import { components } from "@/components/CustomComponent";
 import { client } from "@/sanity/lib/client";
+// Import the PageProps type from the types folder
+import { PageProps } from "../../../../types/page";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import CommentSec from "./commentSec/page";
+import { components } from "@/components/CustomComponent";
 
-// Revalidate interval in seconds
-export const revalidate = 10;
-
-// Define the Props interface
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
+// The rest of your Page component remains unchanged
 const Page = async ({ params }: PageProps) => {
-  // Ensure params are awaited properly (use destructuring here)
-  const slug = params?.slug;
+  // Ensure params are awaited properly
+  const { slug } = params;
 
+  // Check if the slug exists
   if (!slug) {
     return <div>Error: slug not found</div>;
   }
@@ -93,3 +87,7 @@ const Page = async ({ params }: PageProps) => {
 };
 
 export default Page;
+
+
+
+//cd simple-blog-styled-template-for-headless-cms-00
